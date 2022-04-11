@@ -1415,9 +1415,8 @@ elseif iFigure == 11
 
 %% Figure 4.2
 elseif iFigure == 12
-    %% see script 'try_stuff.m', choose_plot=10 %%
+    
     figure
-
     % trajectories basic submodel
     parameter_guess_matrix = [2*10^-5, 7.67*10^-5, 2.2*10^-5, 4*10^-3,  31000, 2.2*10^-9, 0.2*10^-6, 4*10^-4,...
                               4*10^-3, 3.2*10^-2, 3.61*10^-4, 7*10^-3, 2.05*10^-2, 5*10^-3, 5*10^-1,  1.18*10^-4];
