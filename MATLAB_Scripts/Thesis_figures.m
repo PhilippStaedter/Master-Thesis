@@ -17,6 +17,8 @@ gca_interface = 'off';
 % 10 :   Figure 4.6 - Goryachev model                              %
 % 11 :   Figure 4.7 - Manual Start no outlier Parameter Estimation %
 % 12 :   Figure 4.8 - Concentration Trajectories                   %
+% 13 :   Subfigure 2.3 - Flow Chart Experimental Data              %
+% 14 :   Subfigure 2.3 - Flow Chart Trajectory Data Fit            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -1513,7 +1515,21 @@ elseif iFigure == 12
     set(h,'PaperPosition', [0 0 1 1]);
     print(gcf, '-dpdf', 'Figure_4_8.pdf') 
 
+
+%% Subfigure 2.3
+elseif iFigure == 13
+    %% see script 'flowchart.m' %%
+
+
+%% Subfigure 2.3
+elseif iFigure == 14
+    %% see script 'flowchart.m' %%
+
+
+
 end
+
+
 
 %% for Figure 4.3 & Figure 4.7
 function obj = objective_function(guess_parameters)
