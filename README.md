@@ -1,8 +1,8 @@
 # Master-Thesis
-This repository contains all MATLAB code, figures as well as experimental data files which were used and created for this master thesis 'Modelling the Influence of the Anti-Activator System on Quorum Sensing in Pseudomonas aeruginosa'.
+This repository contains all MATLAB code, figures as well as experimental data files which were used and created for the master thesis 'Modelling the Influence of the Anti-Activator System on Quorum Sensing in Pseudomonas aeruginosa'.
 
 ## 1 Content of this master thesis
-The complete master thesis can be found by looking at ```Master_Thesis.pdf```.
+The complete master thesis covers the following topics:
 
 ### 1.1 Biological Background
 This chapter contains all necessary background information on the bacteria Pseudomonas Aeruginosa. The image of the gene circuit can be found in the folder ```Figures/Biological background```.
@@ -35,3 +35,6 @@ The folder ```Figures``` contains all figures seen in the master thesis. In addi
 
 ## 4 Experimental data
 The folder ```Experimental_Data``` contains all experimentally verified data which is used in this thesis to fit the concentration trajectories and thus estimate all unknown parameter values. 
+
+## 5 Citation
+The folder ```Publications``` contains a list of all publications which are cited in this thesis.  
