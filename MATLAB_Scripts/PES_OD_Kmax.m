@@ -52,9 +52,9 @@ for iModel = 1 : 4
     end
 
     [t,y] = simulate(optimized_parameters);
-    plot(t,y,'color',[0, 0.21, 0.46])
+    plot(t,y,'color',[0, 0.21, 0.46], 'LineWidth', 2.0)
     hold on
-    plot(t_data, OD_data, 'o', 'color', [0.96, 0.41, 0])
+    plot(t_data, OD_data, 'o', 'color', [0.96, 0.41, 0], 'LineWidth', 1.5)
 
     % process numbers for annotation object
     exponent = floor(log10(optimized_parameters));

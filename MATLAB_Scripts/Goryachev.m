@@ -8,21 +8,21 @@ figure
 subplot('Position',[0.14, 0.6, 0.25, 0.35]) 
 y0 = [0, 0, 0, 5100, 0, 1*10^-5];
 [s,x] = simulate_unlimited(y0);
-plot(s,x(:,1:5)) 
+plot(s,x(:,1:5), 'LineWidth', 2.0) 
 xlabel('Time [s]')
 ylabel('Concentration [\mumol/l]')
 axis([0, 100000, 10^-5, 10^5])
 text(-1.5*10^4, 10*10^4, 'a', 'FontSize', 18, 'FontWeight', 'bold')
 
 subplot('Position',[0.44, 0.6, 0.25, 0.35]) 
-semilogy(s,x(:,1:5))
+semilogy(s,x(:,1:5), 'LineWidth', 2.0)
 xlabel('Time [s]')
 ylabel('Concentration [\mumol/l]')
 axis([0, 100000, 10^-8, 10^12])
 text(-1.5*10^4, 1*10^12, 'b', 'FontSize', 18, 'FontWeight', 'bold')
 
 subplot('Position',[0.74, 0.6, 0.25, 0.35]) 
-plot(s,x(:,6),'blue')
+plot(s,x(:,6),'blue', 'LineWidth', 2.0)
 xlabel('Time [s]')
 ylabel('Concentration [\mumol/l]')
 axis([0, 100000, 1, 3*10^4])
@@ -33,7 +33,7 @@ text(-1.5*10^4, 3*10^4, 'c', 'FontSize', 18, 'FontWeight', 'bold')
 subplot('Position',[0.14, 0.1, 0.25, 0.35]) 
 y0 = [0, 0, 0, 5100, 0, 1*10^-5];
 [s,x] = simulate_logistic(y0);
-plot(s,x(:,1:5)) 
+plot(s,x(:,1:5), 'LineWidth', 2.0) 
 legend('A_e(t) [\mumol/l] ', 'A_i(t) [\mumol/l] ', 'TraRd(t) [\mumol/l] ', 'N_{cell}(t) [cell]', 'TraM(t) [\mumol/l] ',...
        'Location', [0.02 0.5 0.1 0.1], 'FontSize', 10)
 xlabel('Time [s]')
@@ -42,14 +42,14 @@ axis([0, 100000, 10^-5, 10^5])
 text(-1.5*10^4, 10*10^4, 'd', 'FontSize', 18, 'FontWeight', 'bold')
 
 subplot('Position',[0.44, 0.1, 0.25, 0.35]) 
-semilogy(s,x(:,1:5))
+semilogy(s,x(:,1:5), 'LineWidth', 2.0)
 xlabel('Time [s]')
 ylabel('Concentration [\mumol/l]')
 axis([0, 100000, 10^-8, 10^12])
 text(-1.5*10^4, 1*10^12, 'e', 'FontSize', 18, 'FontWeight', 'bold')
 
 subplot('Position',[0.74, 0.1, 0.25, 0.35]) 
-plot(s,x(:,6),'blue')
+plot(s,x(:,6),'blue', 'LineWidth', 2.0)
 xlabel('Time [s]')
 ylabel('Concentration [\mumol/l]')
 axis([0, 100000, 1, 3*10^4])

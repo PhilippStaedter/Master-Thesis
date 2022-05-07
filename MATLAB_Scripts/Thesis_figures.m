@@ -16,7 +16,7 @@ gca_interface = 'off';
 % 9  :   Figure 4.5 - RsaL extension                               %
 % 10 :   Figure 4.6 - Goryachev model                              %
 % 11 :   Figure 4.7 - Manual Start no outlier Parameter Estimation %
-% 12 :   Figure 4.8 - Concnetration Trajectories                   %
+% 12 :   Figure 4.8 - Concentration Trajectories                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -486,11 +486,11 @@ elseif iFigure == 6
             
         % mark the top three
         if iStart == idx(1)
-            first = semilogy(t,y(:,8), 'color', [217/255,95/255,2/255,1]);
+            first = semilogy(t,y(:,8), 'color', [217/255,95/255,2/255,1], 'LineWidth', 2.0);
         elseif iStart == idx(2)
-            second = semilogy(t,y(:,8), 'color', [27/255,158/255,119/255,1]);
+            second = semilogy(t,y(:,8), 'color', [27/255,158/255,119/255,1], 'LineWidth', 2.0);
         elseif iStart == idx(3)
-            third = semilogy(t,y(:,8), 'color', [117/255,112/255,179/255,1]);
+            third = semilogy(t,y(:,8), 'color', [117/255,112/255,179/255,1], 'LineWidth', 2.0);
         else
             plot(t,y(:,8),'Color',[0,0,0,0.2])
         end
@@ -503,7 +503,7 @@ elseif iFigure == 6
     uistack(first,'top')
 
     % plot everything else
-    semilogy(t_data,y_data,'o', 'color', [0.96, 0.41, 0, 1])
+    semilogy(t_data,y_data,'o', 'color', [0.96, 0.41, 0, 1], 'LineWidth', 1.5)
     xlabel('Time [s]', 'FontSize', 12)
     ylabel('Concentration [\mumol/l]', 'FontSize', 12)
     axis([0, 100000, 0, 30000])
@@ -649,11 +649,11 @@ elseif iFigure == 7
         end
         
         [s,x] = simulate(parameter_guess_matrix(iStart,:));
-        plot(s,x(:,GFP_equation_number), 'color', [0, 0.21, 0.46])
+        plot(s,x(:,GFP_equation_number), 'color', [0, 0.21, 0.46], 'LineWidth', 2.0)
         [t,y] = simulate(optimized_parameter_matrix(iStart,:));
         hold on
-        plot(t,y(:,GFP_equation_number), 'color', [51/255, 160/255, 44/255])
-        plot(t_data,y_data,'o', 'color', [0.96, 0.41, 0])
+        plot(t,y(:,GFP_equation_number), 'color', [51/255, 160/255, 44/255], 'LineWidth', 2.0)
+        plot(t_data,y_data,'o', 'color', [0.96, 0.41, 0], 'LineWidth', 1.5)
         
         % process numbers for annotation object
         exponent_I = floor(log10(str2double(Initial_Objective_Value)));
@@ -863,15 +863,15 @@ elseif iFigure == 8
         end
         
         [s,x] = simulate(parameter_guess_matrix(iStart,:));
-        semilogy(s,x(:,GFP_equation_number), 'color', [34/255, 94/255, 168/255])
+        semilogy(s,x(:,GFP_equation_number), 'color', [34/255, 94/255, 168/255], 'LineWidth', 2.0)
         hold on
         [t,y] = simulate(optimized_parameter_matrix_single(iStart,:));
-        semilogy(t,y(:,GFP_equation_number), 'color', [116/255, 169/255, 207/255])
+        semilogy(t,y(:,GFP_equation_number), 'color', [116/255, 169/255, 207/255], 'LineWidth', 2.0)
         [a,b] = simulate_double(parameter_guess_matrix(iStart,:));
-        semilogy(a,b(:,GFP_equation_number), 'color', [35/255, 139/255, 69/255])
+        semilogy(a,b(:,GFP_equation_number), 'color', [35/255, 139/255, 69/255], 'LineWidth', 2.0)
         [c,d] = simulate_double(optimized_parameter_matrix_double(iStart,:));
-        semilogy(c,d(:,GFP_equation_number), 'color', [120/255, 132/255, 67/255])
-        semilogy(t_data,y_data,'o', 'color', [0.96, 0.41, 0])
+        semilogy(c,d(:,GFP_equation_number), 'color', [120/255, 132/255, 67/255], 'LineWidth', 2.0)
+        semilogy(t_data,y_data,'o', 'color', [0.96, 0.41, 0], 'LineWidth', 1.5)
         
         % process numebrs for annotation object
         exponent_S = floor(log10(str2double(Final_Objective_Value_single)));
@@ -1149,16 +1149,15 @@ elseif iFigure == 9
         end
         
         [s,x] = simulate(parameter_guess_matrix(iStart,:));
-        semilogy(s,x(:,GFP_equation_number), 'color', [34/255, 94/255, 168/255])
+        semilogy(s,x(:,GFP_equation_number), 'color', [34/255, 94/255, 168/255], 'LineWidth', 2.0)
         hold on
         [t,y] = simulate(optimized_parameter_matrix_single(iStart,:));
-        semilogy(t,y(:,GFP_equation_number), 'color', [116/255, 169/255, 207/255])
+        semilogy(t,y(:,GFP_equation_number), 'color', [116/255, 169/255, 207/255], 'LineWidth', 2.0)
         [a,b] = simulate_RsaL(parameter_guess_matrix_RsaL(iStart,:));
-        semilogy(a,b(:,GFP_equation_number + 1), 'color', [35/255, 139/255, 69/255])
+        semilogy(a,b(:,GFP_equation_number + 1), 'color', [35/255, 139/255, 69/255], 'LineWidth', 2.0)
         [c,d] = simulate_RsaL(optimized_parameter_matrix_RsaL(iStart,:));
-        semilogy(c,d(:,GFP_equation_number + 1), 'color', [120/255, 132/255, 67/255])
-
-        semilogy(t_data,y_data,'o', 'color', [0.96, 0.41, 0])
+        semilogy(c,d(:,GFP_equation_number + 1), 'color', [120/255, 132/255, 67/255], 'LineWidth', 2.0)
+        semilogy(t_data,y_data,'o', 'color', [0.96, 0.41, 0], 'LineWidth', 1.5)
         
         % process numebrs for annotation object
         exponent_S = floor(log10(str2double(Final_Objective_Value_single)));
@@ -1357,11 +1356,11 @@ elseif iFigure == 11
         end
         
         [s,x] = simulate(parameter_guess_matrix(iStart,:));
-        plot(s,x(:,GFP_equation_number), 'color', [0, 0.21, 0.46])
+        plot(s,x(:,GFP_equation_number), 'color', [0, 0.21, 0.46], 'LineWidth', 2.0)
         [t,y] = simulate(optimized_parameter_matrix(iStart,:));
         hold on
-        plot(t,y(:,GFP_equation_number), 'color', [51/255, 160/255, 44/255])
-        plot(t_data,y_data,'o', 'color', [0.96, 0.41, 0])
+        plot(t,y(:,GFP_equation_number), 'color', [51/255, 160/255, 44/255], 'LineWidth', 2.0)
+        plot(t_data,y_data,'o', 'color', [0.96, 0.41, 0], 'LineWidth', 1.5)
         
         % process numebrs for annotation object
         exponent_I = floor(log10(str2double(Initial_Objective_Value)));
@@ -1413,7 +1412,7 @@ elseif iFigure == 11
     print(gcf, '-dpdf', 'Figure_4_7.pdf')    
 
 
-%% Figure 4.2
+%% Figure 4.8
 elseif iFigure == 12
     
     figure
@@ -1425,7 +1424,7 @@ elseif iFigure == 12
     y0 = [0, 0, parameter_guess_matrix(10)/parameter_guess_matrix(11)*parameter_guess_matrix(7)/parameter_guess_matrix(9),...
           parameter_guess_matrix(13)/parameter_guess_matrix(12)*parameter_guess_matrix(1)/parameter_guess_matrix(4), 0, 0, 5100, 1*10^-5];
     [t,y] = simulate_trajectories(parameter_guess_matrix,y0,0);
-    semilogy(t,y(:,1:length(y0)-2))
+    semilogy(t,y(:,1:length(y0)-2), 'LineWidth', 2.0)
     xlabel('Time [s]')
     ylabel('Concentration [\mumol/l]')
     axis([0, 100000, 10^-13, 10^2])
@@ -1443,11 +1442,11 @@ elseif iFigure == 12
               parameter_guess_matrix(20)/parameter_guess_matrix(19)*parameter_guess_matrix(8)/parameter_guess_matrix(11), 0, 0, ...
               sqrt(parameter_guess_matrix(3)*parameter_guess_matrix(1)/(2*parameter_guess_matrix(4)*parameter_guess_matrix(2))), 0, 0, 5100, 1*10^-5];
     [t,y] = simulate_trajectories(parameter_guess_matrix,y0,2);
-    semilogy(t,y(:,1:6))
+    semilogy(t,y(:,1:6), 'LineWidth', 2.0)
     hold on
-    semilogy(t,y(:,7), 'black')
-    semilogy(t,y(:,8), 'magenta')
-    semilogy(t,y(:,9), 'green')
+    semilogy(t,y(:,7), 'black', 'LineWidth', 2.0)
+    semilogy(t,y(:,8), 'magenta', 'LineWidth', 2.0)
+    semilogy(t,y(:,9), 'green', 'LineWidth', 2.0)
     xlabel('Time [s]')
     ylabel('Concentration [\mumol/l]')
     axis([0, 100000, 10^-13, 10^2])
@@ -1467,7 +1466,7 @@ elseif iFigure == 12
               parameter_guess_matrix(4))/(parameter_guess_matrix(18)*parameter_guess_matrix(5)*parameter_guess_matrix(1)) - 1),...
               5100, 1*10^-5];
     [t,y] = simulate_trajectories(parameter_guess_matrix,y0,3);
-    semilogy(t,y(:,1:length(y0)-2))
+    semilogy(t,y(:,1:length(y0)-2), 'LineWidth', 2.0)
     xlabel('Time [s]')
     ylabel('Concentration [\mumol/l]')
     axis([0, 100000, 10^-13, 10^2])
@@ -1491,11 +1490,11 @@ elseif iFigure == 12
               0, 0,...
               5100, 1*10^-5];
     [t,y] = simulate_trajectories(parameter_guess_matrix,y0,5);
-    semilogy(t,y(:,1:7))
+    semilogy(t,y(:,1:7), 'LineWidth', 2.0)
     hold on
-    plot(t,y(:,8), 'black')
-    plot(t,y(:,9), 'magenta')
-    plot(t,y(:,10), 'green')
+    plot(t,y(:,8), 'black', 'LineWidth', 2.0)
+    plot(t,y(:,9), 'magenta', 'LineWidth', 2.0)
+    plot(t,y(:,10), 'green', 'LineWidth', 2.0)
     xlabel('Time [s]')
     ylabel('Concentration [\mumol/l]')
     axis([0, 100000, 10^-13, 10^2])
